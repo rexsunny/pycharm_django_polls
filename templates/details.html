@@ -1,7 +1,7 @@
 <h1>In details page</h1>
-{%  if choices %}
+{%  if poll %}
     <ul>
-        {%  for choice in choices %}
+        {%  for choice in poll.choice_set.all %}
             <li>{{  choice.choice }}</li>
             <li>{{  choice.votes }}</li>
             <br>

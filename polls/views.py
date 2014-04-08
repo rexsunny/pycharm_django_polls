@@ -13,6 +13,5 @@ def results(request, poll_id):
     return render_to_response('results.html')
 
 def details(request, poll_id):
-    polls = Poll.objects.filter(pk=poll_id)
-    choices = Choice.objects.filter(poll_id=poll_id)
-    return render_to_response('details.html', dict(choices=choices))
+    poll = Poll.objects.get(pk=poll_id)
+    return render_to_response('details.html', dict(poll=poll))
