@@ -1,0 +1,12 @@
+<h1>In details page</h1>
+{%  if choices %}
+    <ul>
+        {%  for choice in choices %}
+            <li>{{  choice.choice }}</li>
+            <li>{{  choice.votes }}</li>
+            <br>
+        {%  endfor %}
+    </ul>
+{% else %}
+    <p>no details available</p>
+{% endif %}
