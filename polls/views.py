@@ -8,7 +8,7 @@ def index(request):
 
 def vote(request, poll_id):
     poll = Poll.objects.get(pk=poll_id)
-    return render_to_response('vote.html', dict(poll=poll))
+    return render_to_response('vote.html', dict(choice=choice))
 
 def results(request, poll_id):
     return render_to_response('results.html')

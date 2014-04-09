@@ -1,9 +1,14 @@
 from django.conf.urls import patterns, include, url
 from django.conf.urls.static import static
 
+
 from django.contrib import admin
 
 
+info_dict = {
+    'app_label': 'polls',
+    'module_name': 'polls',
+}
 
 admin.autodiscover()
 
@@ -16,4 +21,5 @@ urlpatterns = patterns('',
     (r'^polls/(?P<poll_id>\d+)/results/$', 'polls.views.results'),
     (r'^polls/(?P<poll_id>\d+)/vote/$', 'polls.views.vote'),
     (r'^admin/', include(admin.site.urls)),
+
 )

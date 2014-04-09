@@ -3,7 +3,7 @@
     <ul>
         {%  for choice in poll.choice_set.all %}
             <li>{{  choice.choice }}</li>
-            <li>{{  choice.votes }}</li>
+            <li>{{  choice.votes }} <a href="/polls/{{ choice.id }}/vote/">Vote here</a></li>
             <br>
         {%  endfor %}
     </ul>

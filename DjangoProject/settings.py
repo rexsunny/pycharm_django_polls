@@ -31,7 +31,7 @@ ALLOWED_HOSTS = []
 
 TEMPLATE_DIRS = (os.path.join(os.path.dirname(__file__), '../templates'))
 
-STATICFILES_DIRS = (os.path.join(os.path.dirname(__file__), '../static'))
+STATICFILES_DIRS = (os.path.join(os.path.dirname(__file__), '../static'),)
 
 # Application definition
 
