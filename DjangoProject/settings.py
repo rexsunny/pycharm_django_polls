@@ -31,6 +31,8 @@ ALLOWED_HOSTS = []
 
 TEMPLATE_DIRS = (os.path.join(os.path.dirname(__file__), '../templates'))
 
+STATICFILES_DIRS = (os.path.join(os.path.dirname(__file__), '../static'))
+
 # Application definition
 
 INSTALLED_APPS = (
@@ -85,3 +87,4 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.6/howto/static-files/
 
 STATIC_URL = '/static/'
+

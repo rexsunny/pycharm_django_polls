@@ -1,9 +1,14 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title></title>
-</head>
-<body>
-
-</body>
-</html>
+{% load staticfiles %}
+<h1>Here you can vote</h1>
+<img src="{% static "thumbsup.jpg" %}" />
+{%  if poll %}
+    <ul>
+        {%  for choice in poll.choice_set.all %}
+            <li>{{  choice.choice }}</li>
+            <li>{{  choice.votes }}<a href="/polls/{{ poll.id }}/"></a></a></li>
+            <br>
+        {%  endfor %}
+    </ul>
+{% else %}
+    <p>no details available</p>
+{% endif %}
