@@ -1,9 +1,8 @@
-<h1>In details page</h1>
+<h1>Details page</h1>
 {%  if poll %}
     <ul>
         {%  for choice in poll.choice_set.all %}
-            <li>{{  choice.choice }}</li>
-            <li>{{  choice.votes }} <a href="/polls/{{ choice.id }}/vote/">Vote here</a></li>
+            <li>{{  choice.choice }} &nbsp;&nbsp;&nbsp;=>  <a href="/polls/{{ poll.id }}/vote/{{ choice.id }}">Vote here</a></li>
             <br>
         {%  endfor %}
     </ul>

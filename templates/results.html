@@ -1,14 +1,11 @@
-<h1>All are in polls index page</h1>
-
-
-{% if poll_list %}
+<h1>Results page</h1>
+{%  if poll %}
     <ul>
-        {%  for poll in poll_list %}
-            <li>
-                <a href="/polls/{{ poll.id }}/">{{ poll.question }}</a>
-            </li>
+        {%  for choice in poll.choice_set.all %}
+            <li>{{  choice.choice }}</li>
+            <br>
         {%  endfor %}
     </ul>
-{%  else %}
-<p>No polls available</p>
-{%  endif %}
+{% else %}
+    <p>no details available</p>
+{% endif %}

@@ -1,14 +1,15 @@
 {% load staticfiles %}
 <h1>Here you can vote</h1>
 
-{%  if poll %}
+{%  if choice %}
     <ul>
-        {%  for choice in poll.choice_set.all %}
+
             <li>{{  choice.choice }}</li>
             <li>{{  choice.votes }}</li>
-            <li><a href="/polls/{{ choice.id }}/"><img src="{% static "thumbsup.jpg" %}" width="50" height="50" /></a></li>
-            <br><br><br>
-        {%  endfor %}
+        <br><br><br>
+            <a href="/polls/{{ choice.id }}/"><img src="{% static "thumbsup.jpg" %}" width="50" height="50" /></a>
+
+
     </ul>
 {% else %}
     <p>no details available</p>
