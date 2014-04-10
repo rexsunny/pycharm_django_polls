@@ -14,6 +14,11 @@ def vote(request, poll_id, choice_id):
     choice.save()
     return redirect(results,poll_id=poll_id)
 
+def delete(request, poll_id, choice_id):
+    choice = Choice.objects.get(pk=choice_id)
+    choice.delete()
+    return redirect(results,poll_id=poll_id)
+
 def results(request, poll_id):
     poll = Poll.objects.get(pk=poll_id)
     return render_to_response('results.html', dict(poll=poll))
@@ -24,4 +29,8 @@ def details(request, poll_id):
 
 def add(request):
     #print(request)
-    return render_to_response('add.html',)
+    if(request.POST):
+        print "Posted data"
+    else:
+        return render_to_response('add.html',)
+
