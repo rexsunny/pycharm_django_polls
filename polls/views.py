@@ -29,8 +29,8 @@ def details(request, poll_id):
 
 def add(request):
     #print(request)
-    if(request.POST):
-        print "Posted data"
+    if request.POST:
+        print(request.POST)
+        print("yes")
     else:
         return render_to_response('add.html',)
-

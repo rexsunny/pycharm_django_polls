@@ -4,6 +4,10 @@
 {% block title %}Add Polls and Choices{% endblock %}
 {% block content %}
 
-    <form action="{% url "/polls/add/" %}" method="post"></form>
+    <form action="/polls/add/" method="post">
+        {% csrf_token %}
+        <input type="text" name="txtBox" />
+        <input type="submit" name="submit" value="Submit">
+    </form>
 
 {%  endblock %}
