@@ -1,8 +1,10 @@
+<h2><a href="/polls">Home</a></h2>
 <h1>Results page</h1>
 {%  if poll %}
     <ul>
         {%  for choice in poll.choice_set.all %}
             <li>{{  choice.choice }}</li>
+            <li>{{  choice.votes }}</li>
             <br>
         {%  endfor %}
     </ul>
