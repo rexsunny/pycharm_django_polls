@@ -1,4 +1,6 @@
+{% extends "base_template.html" %}
 {% load staticfiles %}
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -18,6 +20,7 @@
     <![endif]-->
   </head>
   <body>
+  {% block content %}
     <h1>Shady rocks!</h1>
 
 
@@ -55,5 +58,6 @@
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="{%  static  "js/bootstrap.min.js" %}"></script>
 
+  {%  endblock %}
   </body>
 </html>
