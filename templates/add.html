@@ -6,7 +6,26 @@
 
     <form action="/polls/add/" method="post">
         {% csrf_token %}
-        <input type="text" name="txtBox" />
+        <table class="table table-condensed">
+            <tr>
+                <td>Poll Question</td>
+                <td><input type="text" name="question" /></td>
+            </tr>
+            <tr>
+                <td>choice 1</td>
+                <td><input type="text" name="choice"></td>
+            </tr>
+            <tr>
+                <td>choice 2</td>
+                <td><input type="text" name="choice"></td>
+            </tr>
+            <tr>
+                <td>choice 3</td>
+                <td><input type="text" name="choice"></td>
+            </tr>
+        </table>
+
+
         <input type="submit" name="submit" value="Submit">
     </form>
 

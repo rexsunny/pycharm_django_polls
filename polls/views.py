@@ -28,9 +28,14 @@ def details(request, poll_id):
     return render_to_response('details.html', dict(poll=poll))
 
 def add(request):
-    #print(request)
     if request.POST:
-        print(request.POST)
-        print("yes")
+        poll = Poll(question=request.POST.get('question'))
+        poll.save()
+        for ch in request.POST.getlist('choice'):
+            choice = Choice(poll=poll, choice=ch)
+            choice.save()
+        poll_list = Poll.objects.all()
+        return render_to_response('index.html',dict(poll_list=poll_list, msg_success='Successfully submitted poll and choices'))
     else:
-        return render_to_response('add.html',)
+        return render(request,'add.html',{})
+

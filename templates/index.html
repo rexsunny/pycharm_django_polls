@@ -1,6 +1,11 @@
 {% extends "base_template.html" %}
 
 {% block content %}
+    {% if msg_success %}
+    <table class="table table-striped">
+        <tr  class="success"><td>{{ msg_success }}</td></tr>
+    </table>
+    {% endif %}
 <h1>All are in polls index page</h1>
 <h2><a href="/polls/add">Add new poll</a></h2>
 

@@ -29,6 +29,7 @@ TEMPLATE_DEBUG = True
 
 ALLOWED_HOSTS = []
 
+
 TEMPLATE_DIRS = (os.path.join(os.path.dirname(__file__), '../templates'))
 
 STATICFILES_DIRS = (os.path.join(os.path.dirname(__file__), '../static'),)
@@ -43,7 +44,11 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'polls',
+    'bootstrap3',
+    'registration',
 )
+
+ACCOUNT_ACTIVATION_DAYS = 7
 
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',

@@ -23,5 +23,8 @@ urlpatterns = patterns('',
     (r'^polls/(?P<poll_id>\d+)/results/$', 'polls.views.results'),
     (r'^polls/(?P<poll_id>\d+)/vote/(?P<choice_id>\d+)$', 'polls.views.vote'),
     (r'^admin/', include(admin.site.urls)),
+    (r'^accounts/', include('registration.backends.default.urls')),
+    (r'^accounts/login/$', 'django.contrib.auth.views.login', {'next_page': '/'}),
+    (r'^accounts/logout/$', 'django.contrib.auth.views.logout', {'next_page': '/'}),
 
 )
