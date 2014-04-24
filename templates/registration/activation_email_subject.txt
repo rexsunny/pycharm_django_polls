@@ -1,1 +1,1 @@
-{{ site.name }}: Please activate your account.
+Attention! Please activate your account to get started

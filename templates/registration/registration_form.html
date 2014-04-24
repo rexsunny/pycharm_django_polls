@@ -1,31 +1,42 @@
-{% extends "base_template.html" %}
-{% load bootstrap3 %}
+{% extends 'base_template.html' %}
+{% load i18n %}
 
-{% block title %}Registration{% endblock %}
+
+
+
 
 {% block content %}
-<div class="container">
-  <div class="row">
-    <div class="col-sm-offset-2 col-sm-10">
-      <h1>Sign up</h1>
-      <p>Already registered?  
-        <a href="{% url 'django.contrib.auth.views.login' %}">Sign in here.</a></p>
-    </div>
-  </div>
+    {% if user.is_authenticated %}yes {% endif %}
 
-  <form action="{% url 'registration_register' %}" 
-        method="post" role="form" class="form-horizontal">
-    {% csrf_token %}
-    {% bootstrap_form form layout='horizontal' %}
+        <div class="content">
+        
+            {% if form.errors %}
+                <div class="alert alert-block fade in">
+                    <a class="close" data-dismiss="alert" href="#">×</a>
+                    <p><strong>{% trans "Oh snap!" %}</strong> {{ form.non_field_errors }}</p>
+                </div>
+            {% endif %}
+            <form action="" method="post" id="registration-form">{% csrf_token %}
+                <fieldset>
+                    <legend>{% trans 'Sign up' %}</legend>
+                    {% for field in form %}
+                        {% include 'registration/form_field.html' %}
+                    {% endfor %}
+                    <div class="actions">
+                        <input type="submit" class="btn primary" value="{% trans 'Sign up' %}">&nbsp;<button type="reset" class="btn">{% trans 'Cancel' %}</button>
+                    </div>
+                </fieldset>
+            </form>
+            <p>Already a member? <a href="{% url "django.contrib.auth.views.login" %}">{% trans "Log in" %}</a></p>
+            <script type="text/javascript">
+                $(function(){
+                    $(".alert-message").alert();
+                    $('#mainForm').submit(function(){
+                        $('#submit').button('loading');
+                    })
+                });
+                document.forms[1].elements[2].focus();
+            </script>
+        </div>
 
-    {% buttons %}
-    <div class="col-sm-offset-2 col-sm-10">
-      <button type="submit" class="btn btn-primary">
-        {% bootstrap_icon "star" %} Sign Me Up!
-      </button>
-    </div>
-    {% endbuttons %}
-  </form>
-
-</div>
 {% endblock %}
