@@ -24,7 +24,6 @@ urlpatterns = patterns('',
     (r'^polls/(?P<poll_id>\d+)/vote/(?P<choice_id>\d+)$', 'polls.views.vote'),
     (r'^admin/', include(admin.site.urls)),
     (r'^accounts/', include('registration.backends.default.urls')),
-
-
+    (r'^accounts/profile', 'polls.views.profile'),
 
 )

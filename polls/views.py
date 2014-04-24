@@ -39,3 +39,5 @@ def add(request):
     else:
         return render(request,'add.html',{})
 
+def profile(request):
+    return render_to_response('registration/profile.html')
