@@ -6,7 +6,7 @@
         <tr  class="success"><td>{{ msg_success }}</td></tr>
     </table>
     {% endif %}
-<h1>All are in polls index page</h1>
+<h1>Welcome to the polls page, {% if user.username  %}{{ user.username }} {% else %}Guest {% endif %}</h1>
 <h2><a href="/polls/add">Add new poll</a></h2>
 
 {% if poll_list %}

@@ -34,6 +34,8 @@ TEMPLATE_DIRS = (os.path.join(os.path.dirname(__file__), '../templates'))
 
 STATICFILES_DIRS = (os.path.join(os.path.dirname(__file__), '../static'),)
 
+LOGIN_REDIRECT_URL = '/polls/'
+
 # Application definition
 
 INSTALLED_APPS = (
