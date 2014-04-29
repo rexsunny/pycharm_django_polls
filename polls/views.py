@@ -7,7 +7,6 @@ from django.contrib.auth import views as auth_views
 
 def index(request):
     poll_list = Poll.objects.all()
-    print request;
     return render(request, 'index.html', dict(poll_list=poll_list))
 
 def vote(request, poll_id, choice_id):
